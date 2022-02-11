@@ -1,0 +1,11 @@
+#Ant properties
+#Thu Dec 16 17:29:29 CET 2021
+version.api=2011
+vendor=hybris
+group.id=de.hybris.platform
+name=questions
+description=questions
+builddate=20211216 1727
+releasedate=20201119 1630
+version=2011.15
+module.name=platform-module

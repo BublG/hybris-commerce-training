@@ -1,0 +1,5 @@
+INSERT_UPDATE Question;code[unique=true];question;questionCustomer(uid);answer;answerCustomer(uid);product
+;question1;Is it a good product?;men@hybris.com;Yea man;mark.rivers@pronto-hw.com;8796100820993
+;question2;What is a difference between...?;mark.rivers@pronto-hw.com;The diff is...;anonymous;8796100820993
+;question3;Why...?;men@hybris.com;;anonymous;8796187000833
+

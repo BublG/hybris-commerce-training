@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="items.xsd">
+	
+	<relations>
+		
+		<relation code="Product2Question" localized="false">
+			<sourceElement type="Product" qualifier="product" cardinality="one"/>
+			<targetElement type="Question" qualifier="question" cardinality="many"/>
+		</relation>
+		
+	</relations>
+
+	<itemtypes>
+
+		<itemtype code="Question">
+			<deployment table="Questions" typecode="30270"/>
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<modifiers unique="true" optional="false"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="question" type="java.lang.String">
+					<modifiers optional="false"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="questionCustomer" type="Customer">
+					<modifiers optional="false"/>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="answer" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="answerCustomer" type="Customer">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+			<indexes>
+				<index name="codeIDX" unique="true">
+					<key attribute="code"/>
+				</index>
+			</indexes>
+		</itemtype>
+
+	</itemtypes>
+
+</items>
