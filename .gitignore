@@ -1,0 +1,86 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+**-testclasses.xml
+**/beans.xsd
+**/build.xml
+**/classes/**
+**/commonwebsrc/**
+**/extensioninfo.xsd
+**/gensrc/**
+**/hmc/**
+**/items.xsd
+**/platformhome.properties
+**/testclasses/**
+*.class
+*.css.map
+*.ear
+#*.jar
+*.js.map
+*.war
+
+# Folders to ignore, whatever the place they are
+.metadata
+classes/
+hybris/bin/**/bin
+gensrc/
+ 
+# filter only custom extension
+!custom/
+
+
+# Filename patterns to ignore
+*.class
+build.xml
+Generated*.java
+platformhome.properties
+*testclasses.xml
+extensioninfo.xsd
+*hmc.jar
+hmc.xsd
+items.xsd
+beans.xsd
+ruleset.xml
+*.log
+base.properties
+
+#  Addon specific copy folders
+**/_ui/addons
+**/views/addons
+**/tld/addons
+**/tags/addons
+**/messages/addons
+*_bof.jar
+
+#Project specific patchs
+**/jalo/**
+
+*.project
+
+
+**/eclipsebin/**
+
+/idea-module-files/**
+/.idea
+**/_ui-src/**
