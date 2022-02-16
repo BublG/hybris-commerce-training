@@ -14,11 +14,11 @@ public class ProductQuestionsPopulator<SOURCE extends ProductModel, TARGET exten
     @Override
     public void populate(SOURCE source, TARGET target) throws ConversionException {
         target.setQuestions(source.getQuestions().stream()
-                .map(this::convertQuestionModelToData)
+                .map(ProductQuestionsPopulator::convertQuestionModelToData)
                 .collect(Collectors.toList()));
     }
 
-    private QuestionData convertQuestionModelToData(QuestionModel questionModel) {
+    static QuestionData convertQuestionModelToData(QuestionModel questionModel) {
         QuestionData questionData = new QuestionData();
         questionData.setQuestion(questionModel.getQuestion());
         questionData.setAnswer(questionModel.getAnswer());

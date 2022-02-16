@@ -1,0 +1,4 @@
+$solrIndexedType = electronicsProductType
+
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); localized[default = false]; fieldValueProvider
+                                 ; $solrIndexedType                          ; questionsCount     ; int       ; false                     ; productQuestionsCountValueProvider

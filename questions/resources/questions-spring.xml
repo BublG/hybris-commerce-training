@@ -49,4 +49,14 @@
 		<property name="add" ref="productQuestionsPopulator" />
 	</bean>
 
+	<alias name="customSearchResultProductPopulator" alias="commerceSearchResultProductPopulator"/>
+	<bean id="customSearchResultProductPopulator"
+		  class="com.myapp.questions.populators.CustomSearchResultVariantProductPopulator"
+		  parent="variantCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean id="productQuestionsCountValueProvider"
+		  class="com.myapp.questions.providers.ProductQuestionsCountValueProvider" >
+	</bean>
+
 </beans>

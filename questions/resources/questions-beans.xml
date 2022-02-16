@@ -9,6 +9,7 @@
 
     <bean class="de.hybris.platform.commercefacades.product.data.ProductData">
         <property name="questions" type="java.util.List&lt;com.myapp.questions.data.QuestionData&gt;"/>
+        <property name="questionsCount " type="Integer"/>
     </bean>
 
     <enum class="de.hybris.platform.commercefacades.product.ProductOption">
