@@ -2,12 +2,16 @@
 
 <items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:noNamespaceSchemaLocation="items.xsd">
-	
+
+	<collectiontypes>
+		<collectiontype code="QuestionsList" elementtype="Question"/>
+	</collectiontypes>
+
 	<relations>
 		
 		<relation code="Product2Question" localized="false">
 			<sourceElement type="Product" qualifier="product" cardinality="one"/>
-			<targetElement type="Question" qualifier="question" cardinality="many"/>
+			<targetElement type="Question" qualifier="questions" cardinality="many"/>
 		</relation>
 		
 	</relations>
@@ -41,6 +45,22 @@
 					<key attribute="code"/>
 				</index>
 			</indexes>
+		</itemtype>
+
+		<itemtype code="QuestionsCMSComponent" generate="true"
+				  jaloclass="com.myapp.questions.jalo.cms2.components.QuestionsCMSComponent"
+				  extends="SimpleCMSComponent" autocreate="true">
+			<description>It represents paragraph component with an additional question attribute.</description>
+			<attributes>
+				<attribute qualifier="numberOfQuestionsToShow" type="java.lang.Integer">
+					<defaultvalue>3</defaultvalue>
+					<persistence type="property"/>
+					<modifiers optional="false"/>
+				</attribute>
+				<attribute qualifier="fontSize" type="java.lang.Integer">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
 		</itemtype>
 
 	</itemtypes>

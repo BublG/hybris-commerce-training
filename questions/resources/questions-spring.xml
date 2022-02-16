@@ -13,7 +13,8 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
            
-    <context:annotation-config/> 
+    <context:annotation-config/>
+	<context:component-scan base-package="com.myapp.questions"/>
 
 	<bean id="questionsCoreDataImportedEventListener" parent="abstractCoreDataImportedEventListener">
 		<property name="supportedChannels">
@@ -34,6 +35,18 @@
 
 	<bean id="questionsSampleDataEventListener" parent="abstractGenericAddOnSampleDataEventListener"  >
 		<property name="extensionName" value="questions" />
+	</bean>
+
+	<alias name="defaultProductQuestionsPopulator" alias="productQuestionsPopulator"/>
+	<bean id="defaultProductQuestionsPopulator" parent="baseProductPopulator"
+		  class="com.myapp.questions.populators.ProductQuestionsPopulator">
+	</bean>
+
+	<bean parent="configurablePopulatorModification">
+		<property name="target" ref="productConfiguredPopulator" />
+		<property name="keyType" value="de.hybris.platform.commercefacades.product.ProductOption" />
+		<property name="key" value="QUESTIONS" />
+		<property name="add" ref="productQuestionsPopulator" />
 	</bean>
 
 </beans>

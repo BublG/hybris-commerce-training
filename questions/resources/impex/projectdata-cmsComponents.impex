@@ -1,0 +1,8 @@
+$contentCatalog = electronicsContentCatalog
+$contentCV = catalogVersion(catalog(id[default=$contentCatalog]), version[default='Online'])
+
+INSERT_UPDATE QuestionsCMSComponent; $contentCV[unique = true]; uid[unique = true]                 ; name                         ; fontSize; numberOfQuestionsToShow; &componentRef
+                                   ;                   ; SimpleQuestionsCMSComponent ; Simple QuestionsCMSComponent ; 16      ; 2                      ; SimpleQuestionsCMSComponent
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]                 ; active; cmsComponents(&componentRef)
+                         ;                   ; Section3-ProductDetailsSlot ; true  ; SimpleQuestionsCMSComponent

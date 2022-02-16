@@ -13,7 +13,8 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
            
-    <context:annotation-config/> 
+    <context:annotation-config/>
+	<context:component-scan base-package="com.myapp.questions.controllers"/>
 
 
 	<!-- Expose /acceleratoraddon/web/webroot/WEB-INF/messages/base.js.properties  resource bundle as javascript variables -->
