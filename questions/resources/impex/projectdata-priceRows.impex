@@ -1,0 +1,3 @@
+INSERT PriceRow; currency(isocode); giveAwayPrice; minqtd; net   ; price; product(code, catalogVersion); unit(code); user(uid)
+               ; USD              ; false        ; 3     ; false ; 100  ; 300938:8796093547097         ; PCE       ; vasyapupkin123456123456@mail.ru
+               ; USD              ; false        ; 5     ; false ; 80   ; 300938:8796093547097         ; PCE       ; vasyapupkin123456123456@mail.ru
