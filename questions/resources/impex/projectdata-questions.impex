@@ -1,7 +1,3 @@
-$catalog = electronicsContentCatalog
-$catalogVersion = Online
-$productCV = catalog(catalogVersion(id[default=$catalog]), version[default=$catalogVersion])
-
 INSERT_UPDATE Question; code[unique = true]; question                         ; questionCustomer(uid)     ; answer         ; answerCustomer(uid)       ; product(code, catalogVersion)
                       ; question4          ; Is it a good product?            ; men@hybris.com            ; Yea man        ; mark.rivers@pronto-hw.com ; 300938:8796093547097
                       ; question5          ; What is a difference between...? ; mark.rivers@pronto-hw.com ; The diff is... ; anonymous                 ; 300938:8796093547097
@@ -11,3 +7,10 @@ INSERT_UPDATE Question; code[unique = true]; question                         ; 
                       ; question1          ; Is it a good product?            ; men@hybris.com            ; Yea man        ; mark.rivers@pronto-hw.com ; 489702:8796093547097
                       ; question2          ; What is a difference between...? ; mark.rivers@pronto-hw.com ; The diff is... ; anonymous                 ; 489702:8796093547097
                       ; question3          ; Why...?                          ; men@hybris.com            ;                ; anonymous                 ; 489702:8796093547097
+
+INSERT_UPDATE Question; code[unique = true]; question                         ; questionCustomer(uid)     ; answer         ; answerCustomer(uid)       ; product(code, catalogVersion)
+                      ; question7          ; Is it a good product?            ; men@hybris.com            ; Yea man        ; mark.rivers@pronto-hw.com ; 1934794:8796093547097
+                      ; question8          ; What is a difference between...? ; mark.rivers@pronto-hw.com ; The diff is... ; anonymous                 ; 1934794:8796093547097
+
+INSERT_UPDATE Question; code[unique = true]; question                         ; questionCustomer(uid)     ; answer         ; answerCustomer(uid)       ; product(code, catalogVersion)
+                      ; question9          ; Is it a good product?            ; men@hybris.com            ; Yea man        ; mark.rivers@pronto-hw.com ; 1992695:8796093547097
