@@ -1,0 +1,88 @@
+<config xmlns="http://www.hybris.com/cockpit/config"
+        xmlns:y="http://www.hybris.com/cockpit/config/hybris"
+        xmlns:wz="http://www.hybris.com/cockpitng/config/wizard-config"
+        xmlns:explorer-tree="http://www.hybris.com/cockpitng/config/explorertree"
+        xmlns:editorArea="http://www.hybris.com/cockpitng/component/editorArea"
+        xmlns:list-view="http://www.hybris.com/cockpitng/component/listView"
+        xmlns:advanced-search="http://www.hybris.com/cockpitng/config/advancedsearch"
+        xmlns:simple-search="http://www.hybris.com/cockpitng/config/simplesearch">
+
+
+    <!-- Explorer tree configuration -->
+    <context component="explorer-tree" merge-by="module" parent="auto" module="questions">
+        <explorer-tree:explorer-tree>
+            <explorer-tree:navigation-node id="Questions Addon">
+                <explorer-tree:type-node id="Questions" code="Question"/>
+            </explorer-tree:navigation-node>
+        </explorer-tree:explorer-tree>
+    </context>
+
+    <context type="Question" component="listview" merge-by="type">
+        <list-view:list-view>
+            <list-view:column qualifier="product"/>
+            <list-view:column qualifier="questionCustomer"/>
+            <list-view:column qualifier="answerCustomer"/>
+        </list-view:list-view>
+    </context>
+
+    <context type="Question" component="advanced-search" merge-by="type">
+        <advanced-search:advanced-search>
+            <advanced-search:field-list>
+                <advanced-search:field name="product" selected="true"/>
+                <advanced-search:field name="questionCustomer" selected="true"/>
+            </advanced-search:field-list>
+        </advanced-search:advanced-search>
+    </context>
+
+    <context type="Question" component="create-wizard">
+        <wz:flow id="QuestionWizard" title="Create new Question">
+            <wz:prepare id="questionPrepare">
+                <wz:initialize property="newQuestion" type="Question"/>
+            </wz:prepare>
+            <wz:step id="step1" label="Mandatory values">
+                <wz:content id="step1.content">
+                    <wz:property-list root="newQuestion">
+                        <wz:property qualifier="code" type="java.lang.String" label="Code"/>
+                        <wz:property qualifier="question" type="java.lang.String" label="Question"/>
+                        <wz:property qualifier="answer" type="java.lang.String" label="Answer"/>
+                        <wz:property qualifier="questionCustomer" type="de.hybris.platform.core.model.user.CustomerModel" label="Question Customer"/>
+                        <wz:property qualifier="answerCustomer" type="de.hybris.platform.core.model.user.CustomerModel" label="Answer Customer"/>
+                    </wz:property-list>
+                </wz:content>
+                <wz:navigation id="step1.navigation">
+                    <wz:cancel/>
+                    <wz:done visible="!#empty(newQuestion.question) and newQuestion.questionCustomer != null">
+                        <wz:save property="newQuestion"/>
+                    </wz:done>
+                </wz:navigation>
+            </wz:step>
+        </wz:flow>
+    </context>
+
+    <!-- Editor area configuration -->
+    <context type="Question" component="editor-area" merge-by="type">
+        <editorArea:editorArea>
+            <editorArea:tab name="Q&amp;A">
+                <editorArea:section name="Essential">
+                    <editorArea:attribute qualifier="product"/>
+                    <editorArea:attribute qualifier="questionCustomer"/>
+                </editorArea:section>
+                <editorArea:section name="Question">
+                    <editorArea:attribute qualifier="question"/>
+                    <editorArea:attribute qualifier="questionCustomer"/>
+                </editorArea:section>
+                <editorArea:section name="Answer">
+                    <editorArea:attribute qualifier="answer"/>
+                    <editorArea:attribute qualifier="answerCustomer"/>
+                </editorArea:section>
+            </editorArea:tab>
+            <editorArea:tab name="Administration">
+                <editorArea:section name="Essential">
+                    <editorArea:attribute qualifier="product"/>
+                    <editorArea:attribute qualifier="questionCustomer"/>
+                </editorArea:section>
+            </editorArea:tab>
+        </editorArea:editorArea>
+    </context>
+
+</config>

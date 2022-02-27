@@ -20,8 +20,8 @@
         		
         
         <meta key="classpathgen" value="false"/>
-                	
-    
+
+        <meta key="backoffice-module" value="true"/>
     </extension>
         
 
