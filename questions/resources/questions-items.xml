@@ -63,6 +63,21 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype code="SendNewQuestionsToEmailCronJob"
+				  jaloclass="com.myapp.questions.jalo.SendNewQuestionsToEmailCronJob"
+				  extends="CronJob">
+			<attributes>
+				<attribute qualifier="email" type="java.lang.String">
+					<modifiers write="false" read="true"/>
+					<defaultvalue>goragora123456123456@mail.ru</defaultvalue>
+					<persistence type="property"/>
+				</attribute>
+				<attribute qualifier="lastRunTime" type="java.util.Date">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
 	</itemtypes>
 
 </items>

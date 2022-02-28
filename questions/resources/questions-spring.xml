@@ -59,4 +59,9 @@
 		  class="com.myapp.questions.providers.ProductQuestionsCountValueProvider" >
 	</bean>
 
+	<bean id="sendNewQuestionsToEmailJobPerformable"
+		  class="com.myapp.questions.jobs.SendNewQuestionsToEmailJobPerformable"
+		  parent="abstractJobPerformable">
+	</bean>
+
 </beans>
